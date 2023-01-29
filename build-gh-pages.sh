@@ -9,4 +9,4 @@ python3 scripts/gen_svg.py --from-db --type circular --use-localtime
 yarn build-prefix
 
 cp -r /root/running_page/public/. /root/running_page/gh-pages/
-cp -r /root/running_page/assets /root/running_page/gh-pages/assets
+cp -r /root/running_page/assets /root/running_page/gh-pages/static/assets
