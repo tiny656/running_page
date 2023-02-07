@@ -21,10 +21,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3.3.0
+      - uses: actions/checkout@v3
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v3.6.0
+        uses: actions/setup-node@v3
         with:
           node-version: '16'
 
@@ -32,7 +32,7 @@ jobs:
         id: yarn-cache-dir-path
         run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
 
-      - uses: actions/cache@v3.2.4
+      - uses: actions/cache@v3
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
@@ -48,7 +48,7 @@ jobs:
           cp -r assets/ public/static
 
       - name: GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v3.1.0
+        uses: crazy-max/ghaction-github-pages@v3
         with:
           # Git branch where site will be deployed
           target_branch: gh-pages

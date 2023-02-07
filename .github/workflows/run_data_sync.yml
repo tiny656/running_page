@@ -24,8 +24,8 @@ env:
   RUN_TYPE: only_gpx # support strava/nike/garmin/garmin_cn/keep/only_gpx/nike_to_strava/strava_to_garmin/strava_to_garmin_cn/garmin_to_strava/garmin_to_strava_cn, Please change the 'pass' it to your own
   ATHLETE: RealTiny656
   TITLE: RealTiny656 Running
-  MIN_GRID_DISTANCE: 5 # change min distance here
-  TITLE_GRID: Over 5km Runs # also here
+  MIN_GRID_DISTANCE: 10 # change min distance here
+  TITLE_GRID: Over 10km Runs # also here
   GITHUB_NAME: tiny656
   GITHUB_EMAIL: tiny656@hotmail.com
 
@@ -35,9 +35,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Set up Python
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
           python-version: 3.7
 
@@ -49,7 +49,7 @@ jobs:
           echo "PIP_CACHE=$(pip cache dir)" >> $GITHUB_OUTPUT
 
       - name: Cache PIP
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ${{ steps.set_variables.outputs.PIP_CACHE }}
           key: Ubuntu-pip-${{ steps.set_variables.outputs.PY }}
