@@ -12,4 +12,4 @@ services:
     volumes:
       - ./GPX_OUT:/root/running_page/GPX_OUT
       - ./TCX_OUT:/root/running_page/TCX_OUT
-      - ./gh-pages:/root/running_page/gh-pages
+      - ./scripts:/root/running_page/scripts
