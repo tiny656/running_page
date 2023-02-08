@@ -84,6 +84,7 @@ jobs:
         if: env.RUN_TYPE == 'joyrun'
         run: |
           python scripts/joyrun_sync.py ${{ secrets.JOYRUN_PHONE_NUMBER }} ${{ github.event.inputs.verificationCode }} --with-gpx
+          python scripts/gpx_sync.py
           
       - name: Run sync Only GPX script
         if: env.RUN_TYPE == 'only_gpx'
