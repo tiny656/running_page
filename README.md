@@ -21,6 +21,10 @@ English | [简体中文](https://github.com/yihong0618/running_page/blob/master/
 
 ## [Runner's Page Show](https://github.com/yihong0618/running_page/issues/12)
 
+<details>
+<summary>Running page runners</summary>
+
+
 | Runner                                          | page                                         | App       |
 | ----------------------------------------------- | ---------------------------------------------|-----------|
 | [zhubao315](https://github.com/zhubao315)       | <https://zhubao315.github.io/running>        | Strava    |
@@ -58,6 +62,12 @@ English | [简体中文](https://github.com/yihong0618/running_page/blob/master/
 | [Jason Tan](https://github.com/Jason-cqtan)     | <https://jason-cqtan.github.io/running_page> | Nike      |
 | [Conge](https://github.com/conge)               | <https://conge.github.io/running_page>       | Strava    |
 | [zHElEARN](https://github.com/zHElEARN)         | <https://workouts.zhelearn.com>              | Strava    |
+| [Ym9i](https://github.com/Ym9i)                 | <https://bobrun.vercel.app/>                 | Strava    |
+| [jianchengwang](https://github.com/jianchengwang)   | <https://jianchengwang.github.io/running_page>     | Suunto |
+| [fxbin](https://github.com/fxbin)   | <https://fxbin.github.io/sport-records/>     | Keep |
+| [shensl4499](https://github.com/shensl4499) | <https://waner.run> | codoon |
+
+</details>
 
 ## How it works
 
@@ -596,6 +606,8 @@ The following steps need to be taken
 <br>
 
 ![image](https://user-images.githubusercontent.com/15976103/94451037-8922e680-01e0-11eb-9bb9-729f0eadcdb7.png)
+
+4. Go to repository's `Settings -> Code and automation -> Actions ->General`, Scroll to the bottom, find `Workflow permissions`, choose the first option `Read and write permissions`, click `Save`.
 
 </details>
 
