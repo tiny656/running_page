@@ -10,7 +10,7 @@ jobs:
   call_printer_pr:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Call my printer
       if: ${{ github.event.pull_request }}
       run: |
@@ -22,7 +22,7 @@ jobs:
   call_printer_issue:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Call my printer
       if: ${{ !github.event.issue.pull_request }}
       run: |
