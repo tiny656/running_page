@@ -1,4 +1,3 @@
-version: "3.9"
 services:
   running_page:
     container_name: running_page

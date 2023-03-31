@@ -1,10 +1,10 @@
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX || '/',
   siteMetadata: {
-    siteTitle: 'RealTiny656's Running Page',
+    siteTitle: 'RealTiny656 Running Page',
     siteUrl: 'https://tiny656.github.io/running_page/',
     logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTtc69JxHNcmN1ETpMUX4dozAgAN6iPjWalQ&usqp=CAU',
-    description: 'RealTiny656's Running Page',
+    description: 'RealTiny656 Running Page',
     navLinks: [
       {
         name: 'About',

@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       verificationCode:
-        description: 'Verification Code'
+        description: 'Joy run verification code'
         required: true
         type: string
 env:
@@ -83,7 +83,7 @@ jobs:
       - name: Run sync JoyRun script
         if: env.RUN_TYPE == 'joyrun'
         run: |
-          python scripts/joyrun_sync.py ${{ secrets.JOYRUN_PHONE_NUMBER }} ${{ github.event.inputs.verificationCode }}
+          python scripts/joyrun_sync.py ${{ secrets.JOYRUN_PHONE_NUMBER }} ${{ github.event.inputs.verificationCode }} --with-gpx
           
       - name: Run sync Only GPX script
         if: env.RUN_TYPE == 'only_gpx'
