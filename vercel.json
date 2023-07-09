@@ -3,5 +3,8 @@
     "deploymentEnabled": {
       "gh-pages": false
     }
+  },
+  "github": {
+    "silent": true
   }
 }
