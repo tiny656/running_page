@@ -74,6 +74,8 @@ R.I.P. 希望大家都能健康顺利的跑过终点，逝者安息。
 | [Ray Wang](https://github.com/raywangsy)          | <https://run.raywang.pro/>                     | Garmin    |
 | [RealTiny656](https://github.com/tiny656)         | <https://tiny656.github.io/running_page/>      | JoyRun    |
 | [EINDEX](https://github.com/eindex)               | <https://workouts.eindex.me/>                  | Strava/Nike|
+| [Melt](https://github.com/fpGHwd)                 | <https://running.autove.dev/>                  | Strava    |
+| [deepinwine](https://github.com/deepinwine)       | <https://deepin.autove.dev/>                   | Garmin-cn |
 
 </details>
 
@@ -113,6 +115,7 @@ R.I.P. 希望大家都能健康顺利的跑过终点，逝者安息。
 - **[郁金香运动](#tulipsport)**
 - **[GPX](#gpx)**
 - **[TCX](#tcx)**
+- **[FIT](#fit)**
 - **[Tcx+Strava(upload all tcx data to strava)](#tcx_to_strava)**
 - **[Gpx+Strava(upload all tcx data to strava)](#gpx_to_strava)**
 - **[Nike+Strava(Using NRC Run, Strava backup data)](#nikestrava)**
@@ -248,6 +251,20 @@ python3(python) scripts/gpx_sync.py
 
 ```python
 python3(python) scripts/tcx_sync.py
+```
+
+</details>
+
+### FIT
+
+<details>
+<summary>Make your <code>FIT</code> data</summary>
+<br>
+
+把其它软件生成的 fit files 拷贝到 FIT_OUT 之后运行
+
+```python
+python3(python) scripts/fit_sync.py
 ```
 
 </details>
@@ -699,8 +716,6 @@ python3(python) scripts/strava_to_garmin_sync.py ${{ secrets.STRAVA_CLIENT_ID }}
 python3(python) scripts/strava_to_garmin_sync.py ${{ secrets.STRAVA_CLIENT_ID }} ${{ secrets.STRAVA_CLIENT_SECRET }} ${{ secrets.STRAVA_CLIENT_REFRESH_TOKEN }}  ${{ secrets.GARMIN_CN_EMAIL }} ${{ secrets.GARMIN_CN_PASSWORD }} ${{ secrets.STRAVA_EMAIL }} ${{ secrets.STRAVA_PASSWORD }} --is-cn
 ```
 
-If you want to add Garmin Device during sync, you should add `--use_fake_garmin_device` argument, this will add a Garmin Device (Garmin Forerunner 245 by default, and you can change device in `garmin_device_adaptor.py`) in synced Garmin workout record, this is essential when you want to sync the workout record to other APP like Keep, JoyRun etc. and the final command will be:
-
 如果要在同步到Garmin的运动记录中添加Garmin设备信息，需要添加`--use_fake_garmin_device`参数，这将在同步的Garmin锻炼记录中添加一个Garmin设备（默认情况下为 `Garmin Forerunner 245`，您可以在`garmin_device_adaptor.py`中更改设备信息），运动记录中有了设备信息之后就可以同步到其他APP中，比如数字心动（攒上马积分）这类不能通过Apple Watch同步的APP，当然也可以同步到Keep，悦跑圈，咕咚等APP。
 
 <img width="830" alt="image" src="https://github.com/yihong0618/running_page/assets/8613196/b5076942-3133-4c89-ad66-a828211667dc">
@@ -814,6 +829,17 @@ Actions [源码](https://github.com/yihong0618/running_page/blob/master/.github/
    ![image](https://user-images.githubusercontent.com/15976103/94451037-8922e680-01e0-11eb-9bb9-729f0eadcdb7.png)
 
 </details>
+
+# Fit 文件
+
+测试发现，不同厂商在写fit文件的时候有略微差异。
+
+已调试设备：
+
+- [x] 佳明手表
+- [x] 迈金码表
+
+如果发现自己的fit文件解析有问题。可以提issue。
 
 # TODO
 
