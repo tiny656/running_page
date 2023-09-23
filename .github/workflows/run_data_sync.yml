@@ -87,9 +87,9 @@ jobs:
       - name: Run sync Strava script
         if: env.RUN_TYPE == 'strava'
         run: |
-          python scripts/strava_sync.py ${{ secrets.STRAVA_CLIENT_ID }} ${{ secrets.STRAVA_CLIENT_SECRET }} ${{ secrets.STRAVA_CLIENT_REFRESH_TOKEN }}
+          python run_page/strava_sync.py ${{ secrets.STRAVA_CLIENT_ID }} ${{ secrets.STRAVA_CLIENT_SECRET }} ${{ secrets.STRAVA_CLIENT_REFRESH_TOKEN }}
         # If you only want to sync `type running` add args --only-run, default script is to sync all data (rides and runs).
-        # python scripts/garmin_sync.py ${{ secrets.GARMIN_EMAIL }} ${{ secrets.GARMIN_PASSWORD }} --only-run --is-cn
+        # python run_page/garmin_sync.py ${{ secrets.GARMIN_EMAIL }} ${{ secrets.GARMIN_PASSWORD }} --only-run --is-cn
 
       - name: Run sync Codoon script
         if: env.RUN_TYPE == 'codoon'
@@ -114,22 +114,21 @@ jobs:
       - name: Run sync JoyRun script
         if: env.RUN_TYPE == 'joyrun'
         run: |
-          python scripts/joyrun_sync.py ${{ secrets.JOYRUN_PHONE_NUMBER }} ${{ github.event.inputs.verificationCode }} --with-gpx
+          python run_page/joyrun_sync.py ${{ secrets.JOYRUN_PHONE_NUMBER }} ${{ github.event.inputs.verificationCode }} --with-gpx
 
       - name: Run sync Only GPX script
         if: env.RUN_TYPE == 'only_gpx'
         run: |
-          python run_page/gpx_sync.py
-
+          python run_page/gpx_sync.pycript
       - name: Run sync Only FIT script
         if: env.RUN_TYPE == 'only_fit'
         run: |
-          python scripts/fit_sync.py
+          python run_page/fit_sync.py
 
       - name: Run sync Only TCX script
         if: env.RUN_TYPE == 'only_tcx'
         run: |
-          python scripts/tcx_sync.py
+          python run_page/tcx_sync.py
 
       - name: Run sync Strava to Garmin(Run with strava(or others upload to strava) data backup in Garmin)
         if: env.RUN_TYPE == 'strava_to_garmin'
