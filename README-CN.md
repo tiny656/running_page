@@ -1,8 +1,8 @@
 ## note1: clone or Fork before vercel 404 need to pull the latest code
 
-## note2: python3(python) in README means python3 python,
+## note2: python3(python) in README means python3 python
 
-## note3: use v2.0 need change vercel setting from gatsby to vercel
+## note3: use v2.0 need change vercel setting from gatsby to vite
 
 ![running_page](https://socialify.git.ci/yihong0618/running_page/image?description=1&font=Inter&forks=1&issues=1&language=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2Fshaonianche%2Fgallery%2Fmaster%2Frunning_page%2Frunning_page_logo_150*150.jpg&owner=1&pulls=1&stargazers=1&theme=Light)
 
@@ -138,7 +138,7 @@ R.I.P. 希望大家都能健康顺利的跑过终点，逝者安息。
 git clone https://github.com/yihong0618/running_page.git --depth=1
 ```
 
-## 安装及测试 (node >= 14.15.0 python >= 3.7)
+## 安装及测试 (node >= 16 python >= 3.8)
 
 ```
 pip3 install -r requirements.txt
@@ -146,7 +146,7 @@ npm install -g corepack && corepack enable && pnpm install
 pnpm develop
 ```
 
-访问 <http://localhost:8000/> 查看
+访问 <http://localhost:5173/> 查看
 
 ## Docker
 
@@ -787,17 +787,19 @@ python3(python) run_page/gen_svg.py --from-db --type circular --use-localtime
 <summary> 使用 Cloudflare 部署 </summary>
 <br>
 
-1. 在 `Pages` 中点击 `Create a project` 以连接到你的仓库
+1. 登录到 [Cloudflare 仪表板](https://dash.cloudflare.com)。
 
-2. 点击 `Begin setup` 后，修改项目的 `Build settings`。
+2. 在左侧选择 `Workers 和 Pages`。
 
-3. 在 `Framework preset` 中选择 `Create React App` 框架。
+3. 点击 `创建应用程序` 后选择 `Pages` 页面，链接您的 GitHub 账户并选择 `running_page` 仓库，点击 `开始设置`。
 
-4. 向下滚动，点击 `Environment variables` 修改变量如下：
+4. 下滑到 `构建设置`，在 `框架预设` 中选择 `Create React App`，将 `构建输出目录` 设置为 `dist`。
 
-   > Variable name = `PYTHON_VERSION`, Value = `3.7`
+5. 下滑点击 `环境变量 (高级)`，并添加一个如下的变量：
 
-5. 点击 `Save and Deploy`，完成部署。
+   > 变量名称 = `PYTHON_VERSION`, 值 = `3.7`
+
+6. 点击 `保存并部署`，完成部署。
 
 </details>
 
