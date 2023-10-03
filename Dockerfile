@@ -1,8 +1,7 @@
-FROM nikolaik/python-nodejs:python3.10-nodejs14-slim
 
+FROM python:3.10.5-slim AS develop-py
 WORKDIR /root/running_page
-COPY . /root/running_page/
-
+COPY ./requirements.txt /root/running_page/requirements.txt
 RUN apt-get update \
   && apt-get install -y --no-install-recommends git \
   && apt-get purge -y --auto-remove \
