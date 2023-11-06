@@ -83,10 +83,20 @@ export {
   MAP_HEIGHT,
 };
 
-const nike = 'rgb(224,237,94)'; // if you want change the main color change here src/styles/variables.scss
+const nike = 'rgb(224,237,94)'; 
+const yellow = 'rgb(224,237,94)';
+const green = 'rgb(0,237,94)';
+const pink = 'rgb(237,85,219)';
+const cyan = 'rgb(112,243,255)';
+const IKB = 'rgb(0,47,167)';
+const wpink = 'rgb(228,212,220)';
+const gold = 'rgb(242,190,69)';
+const purple = 'rgb(154,118,252)';
+const veryPeri = 'rgb(105,106,173)';//长春花蓝
+const red = 'rgb(255,0,0)';//大红色
 
 // If your map has an offset please change this line
 // issues #92 and #198
 export const NEED_FIX_MAP = false;
-export const MAIN_COLOR = nike;
+export const MAIN_COLOR = green;
 export const PROVINCE_FILL_COLOR = '#47b8e0';
