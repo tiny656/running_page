@@ -7,6 +7,7 @@ const SVGStat = () => (
   <div id="svgStat">
     <GitHubSvg className={styles.runSVG} />
     <GridSvg className={styles.runSVG} />
+    <img className={styles.runSVG} src='https://raw.githubusercontent.com/tiny656/miles/master/miles.svg' />
   </div>
 );
 
