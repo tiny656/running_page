@@ -126,10 +126,7 @@ const locationForRun = (
     // default country is China
     if (l.length <= 2) {
       country = "中国";
-    } else if (!countryMatch && l.length == 3) {
-      countryMatch = l[2].match(/[\u4e00-\u9fa5].*[\u4e00-\u9fa5]/);
-    }
-    if (countryMatch) {
+    } else if (countryMatch) {
       [country] = countryMatch;
     }
   }
