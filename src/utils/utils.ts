@@ -80,7 +80,7 @@ const scrollToMap = () => {
   }
 };
 
-const pattern = /([\u4e00-\u9fa5]{2,}(市|自治州|特别行政区))/g;
+const pattern = /([\u4e00-\u9fa5]{2,}(市|地区|自治州|特别行政区))/g;
 const extractLocations = (str: string): string[] => {
   const locations = [];
   let match;
@@ -105,7 +105,7 @@ const locationForRun = (
   let [city, province, country] = ['', '', ''];
   if (location) {
     // Only for Chinese now
-    // should fiter 臺灣
+    // should filter 臺灣
     const cityMatch = extractLocations(location);
     const provinceMatch = location.match(/[\u4e00-\u9fa5]{2,}(省|自治区)/);
 
@@ -119,12 +119,14 @@ const locationForRun = (
     if (provinceMatch) {
       [province] = provinceMatch;
     }
-    const l = location.split(',');
-    // or to handle keep location format
+    const l = location.split(':');
     let countryMatch = l[l.length - 1].match(
       /[\u4e00-\u9fa5].*[\u4e00-\u9fa5]/
     );
-    if (!countryMatch && l.length >= 3) {
+    // default country is China
+    if (l.length <= 2) {
+      country = "中国";
+    } else if (!countryMatch && l.length == 3) {
       countryMatch = l[2].match(/[\u4e00-\u9fa5].*[\u4e00-\u9fa5]/);
     }
     if (countryMatch) {
