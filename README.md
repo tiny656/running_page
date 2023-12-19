@@ -92,6 +92,7 @@ English | [简体中文](https://github.com/yihong0618/running_page/blob/master/
 | [Jeffggmm](https://github.com/Jeffggmm)           | <https://jeffggmm.github.io/workouts_page/>    | Garmin      |
 | [s1smart](https://github.com/s1smart)             | <https://s1smart.github.io/running_page/>      | Strava      |
 | [XmchxUp](https://github.com/XmchxUp)             | <https://xmchxup.github.io/running_page/>      | Strava      |
+| [Ryan](https://github.com/85Ryan)                 | <https://85ryan.github.io/gooorun/>            | Strava      |
 
 </details>
 
@@ -213,6 +214,13 @@ siteMetadata: {
 const USE_DASH_LINE = true;
 // styling: route line opacity: [0, 1]
 const LINE_OPACITY = 0.4;
+```
+
+- To use Google Analytics, you need to modify the configuration in the `src/utils/const.ts` file.
+
+```typescript
+const USE_GOOGLE_ANALYTICS = false;
+const GOOGLE_ANALYTICS_TRACKING_ID = '';
 ```
 
 > privacy protection,setting flowing env:
