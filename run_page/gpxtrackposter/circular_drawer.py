@@ -101,8 +101,8 @@ class CircularDrawer(TracksDrawer):
         if self._rings:
             self._draw_rings(dr, center, radius_range)
 
-        year_style = f"dominant-baseline: central; font-size:{min_size * 4.0 / 80.0}px; font-family:Arial;"
-        month_style = f"font-size:{min_size * 3.0 / 80.0}px; font-family:Arial;"
+        year_style = f'dominant-baseline: central; font-size:{min_size * 4.0 / 80.0}px; font-family: system-ui, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;;'
+        month_style = f'font-size:{min_size * 3.0 / 80.0}px; font-family: system-ui, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;;'
 
         dr.add(
             dr.text(

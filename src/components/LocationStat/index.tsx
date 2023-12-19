@@ -25,7 +25,7 @@ const LocationStat = ({ changeYear, changeCity, changeTitle }: ILocationStatProp
         .
         <br />
         <br />
-        Yesterday you said tomorrow.
+        The future starts today, not tomorrow.
       </p>
     </section>
     <hr color="red" />

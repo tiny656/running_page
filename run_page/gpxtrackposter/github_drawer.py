@@ -21,9 +21,9 @@ class GithubDrawer(TracksDrawer):
         if self.poster.tracks is None:
             raise PosterError("No tracks to draw")
         year_size = 200 * 4.0 / 80.0
-        year_style = f"font-size:{year_size}px; font-family:Arial;"
-        year_length_style = f"font-size:{110 * 3.0 / 80.0}px; font-family:Arial;"
-        month_names_style = f"font-size:2.5px; font-family:Arial"
+        year_style = f'font-size:{year_size}px; font-family: system-ui, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;;'
+        year_length_style = f'font-size:{110 * 3.0 / 80.0}px; font-family: system-ui, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;;'
+        month_names_style = f'font-size:2.5px; font-family: system-ui, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;'
         total_length_year_dict = self.poster.total_length_year_dict
         for year in range(self.poster.years.from_year, self.poster.years.to_year + 1)[
             ::-1
