@@ -14,7 +14,7 @@ const Header = () => {
         <div className="dib w-25 v-mid">
           <Link to={siteUrl} className="link dim">
             <picture>
-              <img className="dib w3 h3 br-100" alt="logo" src={logo} />
+              <img className="dib w4 h4 br-100" alt="logo" src={logo} />
             </picture>
           </Link>
         </div>

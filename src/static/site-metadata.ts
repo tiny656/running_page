@@ -12,13 +12,13 @@ interface ISiteMetadataResult {
 const data: ISiteMetadataResult = {
   siteTitle: 'RealTiny656 Run',
   siteUrl: 'https://tiny656.github.io/running_page/',
-  logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTtc69JxHNcmN1ETpMUX4dozAgAN6iPjWalQ&usqp=CAU',
+  logo: 'https://ooo.0x0.ooo/2023/12/20/OKzpKP.png',
   description: 'Personal site',
   navLinks: [
-    {
-      name: 'About',
-      url: 'https://github.com/tiny656',
-    },
+    // {
+    //   name: 'About',
+    //   url: 'https://github.com/tiny656',
+    // },
   ],
 };
 
