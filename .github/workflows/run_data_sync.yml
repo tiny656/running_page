@@ -84,6 +84,11 @@ jobs:
         run: |
           python run_page/keep_sync.py ${{ secrets.KEEP_MOBILE }} ${{ secrets.KEEP_PASSWORD }} --with-gpx
 
+      - name: Run sync Coros script
+        if: env.RUN_TYPE == 'coros'
+        run: |
+          python run_page/coros_sync.py ${{ secrets.COROS_ACCOUNT }} ${{ secrets.COROS_PASSWORD }}
+
       - name: Run sync Strava script
         if: env.RUN_TYPE == 'strava'
         run: |
