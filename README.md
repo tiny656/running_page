@@ -128,7 +128,7 @@ English | [简体中文](https://github.com/yihong0618/running_page/blob/master/
 - **[Gpx_to_Strava(upload all gpx data to strava)](#gpx_to_strava)**
 - **[Garmin_to_Strava(Using Garmin Run, Strava backup data)](#garmin_to_strava)**
 - **[Strava_to_Garmin(Using Strava Run, Garmin backup data)](#strava_to_garmin)**
-
+- **[Coros](#Coros)**
 ## Download
 
 Clone or fork the repo.
@@ -684,6 +684,29 @@ ps: **when initializing for the first time, if you have a large amount of strava
 
 </details>
 
+
+
+### Coros
+
+<details>
+<summary>Get your Coros data</summary>
+
+#### Enter the following command in the terminal
+
+```bash
+python run_page/coros_sync.py 'your coros account' 'your coros password'
+```
+
+#### Modify `run_data_sync.yml`  env.RUN_TYPE: _coros_
+
+#### Set the Coros account information in github action
+
+- configure the `COROS_ACCOUNT` , `COROS_PASSWORD`
+
+  ![github-action](https://img3.uploadhouse.com/fileuploads/30980/3098042335f8995623f8b50776c4fad4cf7fff8d.png)
+
+</details>
+
 ### Total Data Analysis
 
 <details>
@@ -924,7 +947,7 @@ Just enjoy it~
   Strava API Rate Limit Timeout. Retry in 799.491622 seconds
   ```
 
-- vercel git ignpre gh-pages:
+- vercel git ignore gh-pages:
 
   you can change settings -> build -> Ignored Build Step -> Custom command
 
