@@ -96,6 +96,7 @@ English | [简体中文](https://github.com/yihong0618/running_page/blob/master/
 | [PPZ](https://github.com/8824PPZ)                 | <https://run.dudubbbbbbbbb.top/>               | Strava      |
 | [Yer1k](https://github.com/Yer1k)                 | <https://running.yer1k.com/>                   | Strava      |
 | [AlienVision](https://github.com/weaming)         | <https://run.drink.cafe/>                      | Strava      |
+| [闻笑忘](https://wenxiaowan.com)                | <https://wenxiaowan.com>                       | 苹果健身     |
 </details>
 
 ## How it works
@@ -166,6 +167,9 @@ docker build -t running_page:latest . --build-arg app=Strava --build-arg client_
 
 # Nike_to_Strava
 docker build -t running_page:latest . --build-arg app=Nike_to_Strava  --build-arg nike_refresh_token="" --build-arg client_id=""  --build-arg client_secret=""  --build-arg refresh_token=""
+
+# Keep
+docker build -t running_page:latest . --build-arg app=Keep --build-arg keep_phone_number="" --build-arg keep_password=""
 
 # run
 docker run -itd -p 80:80   running_page:latest
