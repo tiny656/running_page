@@ -12,7 +12,7 @@ const SVGStat = () => (
     <Suspense fallback={<div className="text-center">Loading...</div>}>
       <GithubSvg className="mt-4 h-auto w-full" />
       <GridSvg className="mt-4 h-auto w-full" />
-      <img className={styles.runSVG} src='https://raw.githubusercontent.com/tiny656/miles/master/miles.svg' />
+      <img className="mt-4 h-auto w-full" src='https://raw.githubusercontent.com/tiny656/miles/master/miles.svg' />
     </Suspense>
   </div>
 );
