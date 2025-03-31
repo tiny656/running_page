@@ -21,9 +21,9 @@ class GithubDrawer(TracksDrawer):
         if self.poster.tracks is None:
             raise PosterError("No tracks to draw")
         year_size = 200 * 4.0 / 80.0
-        year_style = f'font-size:{year_size}px; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;'
-        year_length_style = f'font-size:{110 * 3.0 / 80.0}px; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;'
-        month_names_style = f'font-size:2.5px; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;'
+        year_style = f"font-size:{year_size}px; font-family:Arial;"
+        year_length_style = f"font-size:{110 * 3.0 / 80.0}px; font-family:Arial;"
+        month_names_style = "font-size:2.5px; font-family:Arial"
         total_length_year_dict = self.poster.total_length_year_dict
 
         is_align_monday = self.poster.github_style == "align-monday"
