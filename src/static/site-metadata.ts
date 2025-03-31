@@ -15,10 +15,10 @@ const data: ISiteMetadataResult = {
   logo: 'https://ooo.0x0.ooo/2024/12/20/OE5H71.png',
   description: 'RealTiny656 Run',
   navLinks: [
-    // {
-    //   name: 'About',
-    //   url: 'https://github.com/tiny656',
-    // },
+    {
+      name: 'Github',
+      url: 'https://github.com/tiny656',
+    },
   ],
 };
 
