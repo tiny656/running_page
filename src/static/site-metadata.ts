@@ -16,6 +16,10 @@ const data: ISiteMetadataResult = {
   description: 'RealTiny656 Run',
   navLinks: [
     {
+      name: 'Summary',
+      url: '/summary',
+    },
+    {
       name: 'Github',
       url: 'https://github.com/tiny656',
     },
