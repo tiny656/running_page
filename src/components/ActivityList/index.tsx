@@ -171,10 +171,10 @@ const ActivityList: React.FC = () => {
                     const startOfYear = new Date(date.getFullYear(), 0, 1);
                     const weekNumber = Math.ceil(((date.getTime() - startOfYear.getTime()) / 86400000 + startOfYear.getDay() + 1) / 7);
                     key = `${date.getFullYear()}-W${weekNumber.toString().padStart(2, '0')}`; // Zero padding
-                    index = date.getDay(); // Return the day of the week (0-6)
+                    index = date.getUTCDay(); // Return the day of the week (0-6)
                     break;
                 case 'day':
-                    key = date.toLocaleDateString("zh")
+                    key = date.toLocaleDateString("zh").replaceAll('/', '-'); // Format date as YYYY-MM-DD
                     index = 0; // Return 0
                     break;
                 default:
