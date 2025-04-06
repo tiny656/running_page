@@ -177,7 +177,7 @@ const ActivityList: React.FC = () => {
                     const week1 = new Date(target.getFullYear(), 0, 4);
                     const weekNumber = 1 + Math.ceil((firstThursday - week1) / 604800000)
                     key = `${target.getFullYear()}-W${weekNumber.toString().padStart(2, '0')}`; // Zero padding
-                    index = date.getDay(); // Return current day (0-6)
+                    index = (date.getDay() + 6 ) % 7;
                     break;
                 case 'day':
                     key = date.toLocaleDateString("zh").replaceAll('/', '-'); // Format date as YYYY-MM-DD
