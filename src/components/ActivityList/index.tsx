@@ -174,7 +174,7 @@ const ActivityList: React.FC = () => {
                     index = date.getDay(); // Return the day of the week (0-6)
                     break;
                 case 'day':
-                    key = date.toISOString().split('T')[0];
+                    key = date.toLocaleDateString("zh")
                     index = 0; // Return 0
                     break;
                 default:
