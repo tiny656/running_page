@@ -7,7 +7,7 @@ import {ACTIVITY_TOTAL, ACTIVITY_TYPES} from "@/utils/const";
 
 // Define interfaces for our data structures
 interface Activity {
-  start_date: string;
+  start_date_local: string;
   distance: number;
   moving_time: string;
   type: string;
@@ -155,7 +155,7 @@ const ActivityList: React.FC = () => {
 
     const groupActivities = (interval: IntervalType): ActivityGroups => {
         return (activities as Activity[]).filter(filterActivities).reduce((acc: ActivityGroups, activity) => {
-            const date = new Date(activity.start_date);
+            const date = new Date(activity.start_date_local);
             let key: string;
             let index: number;
             switch (interval) {
@@ -182,16 +182,16 @@ const ActivityList: React.FC = () => {
                     index = 0; // Default return 0
             }
 
-            if (!acc[key]) acc[key] = { 
-                totalDistance: 0, 
-                totalTime: 0, 
-                count: 0, 
-                dailyDistances: [], 
-                maxDistance: 0, 
-                maxSpeed: 0, 
-                location: '' 
+            if (!acc[key]) acc[key] = {
+                totalDistance: 0,
+                totalTime: 0,
+                count: 0,
+                dailyDistances: [],
+                maxDistance: 0,
+                maxSpeed: 0,
+                location: ''
             };
-            
+
             const distanceKm = activity.distance / 1000; // Convert to kilometers
             const timeInSeconds = convertTimeToSeconds(activity.moving_time);
             const speedKmh = timeInSeconds > 0 ? distanceKm / (timeInSeconds / 3600) : 0;
@@ -217,18 +217,17 @@ const ActivityList: React.FC = () => {
     return (
         <div className={styles.activityList}>
             <div className={styles.filterContainer}>
-                <button 
-                    className={styles.smallHomeButton} 
+                <button
+                    className={styles.smallHomeButton}
                     onClick={() => navigate('/')}
                 >
                     Home
                 </button>
                 <select onChange={(e) => setActivityType(e.target.value)} value={activityType}>
                     <option value="run">{ACTIVITY_TYPES.RUN_GENERIC_TITLE}</option>
-                    <option value="ride">{ACTIVITY_TYPES.CYCLING_TITLE}</option>
                 </select>
-                <select 
-                    onChange={(e) => toggleInterval(e.target.value as IntervalType)} 
+                <select
+                    onChange={(e) => toggleInterval(e.target.value as IntervalType)}
                     value={interval}
                 >
                     <option value="year">{ACTIVITY_TOTAL.YEARLY_TITLE}</option>
