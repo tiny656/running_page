@@ -17,7 +17,7 @@ const data: ISiteMetadataResult = {
   navLinks: [
     {
       name: 'Summary',
-      url: '/running_page/summary',
+      url: `${import.meta.env.BASE_URL}/summary`,
     },
     {
       name: 'Github',

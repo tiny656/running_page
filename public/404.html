@@ -4,12 +4,10 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script>
-      // Get the current path excluding the domain
+      const basePath = import.meta.env.BASE_URL;
       const path = window.location.pathname;
-      // Save it to session storage
       sessionStorage.setItem('redirect', path);
-      // Redirect to index.html
-      window.location.replace(window.location.origin + '/running_page/');
+      window.location.replace(window.location.origin + basePath + '/');
     </script>
   </head>
   <body>
