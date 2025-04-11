@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script>
-      const basePath = import.meta.env.BASE_URL;
+      const basePath = %BASE_URL%;
       const path = window.location.pathname;
       sessionStorage.setItem('redirect', path);
       window.location.replace(window.location.origin + basePath + '/');
