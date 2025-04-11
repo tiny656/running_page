@@ -9,6 +9,11 @@ interface ISiteMetadataResult {
   }[];
 }
 
+const getBasePath = () => {
+  const baseUrl = import.meta.env.BASE_URL;
+  return baseUrl === '/' ? '' : baseUrl;
+};
+
 const data: ISiteMetadataResult = {
   siteTitle: 'RealTiny656 Run',
   siteUrl: 'https://tiny656.github.io/running_page/',
@@ -17,7 +22,7 @@ const data: ISiteMetadataResult = {
   navLinks: [
     {
       name: 'Summary',
-      url: `${import.meta.env.BASE_URL}/summary`,
+      url: `${getBasePath()}/summary`,
     },
     {
       name: 'Github',
