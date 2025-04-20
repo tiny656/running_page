@@ -46,7 +46,7 @@ const YearStat = ({ year, onClick }: { year: string, onClick: (_year: string) =>
     }
   });
   sumDistance = parseFloat((sumDistance / 1000.0).toFixed(1));
-  sumElevationGain = (sumElevationGain).toFixed(0);
+  sumElevationGain = (sumElevationGain).toFixed(1);
   const avgPace = formatPace(totalMetersAvail / totalSecondsAvail);
   const hasHeartRate = !(heartRate === 0);
   const avgHeartRate = (heartRate / (runs.length - heartRateNullCount)).toFixed(
