@@ -370,7 +370,7 @@ class Joyrun:
                 eval(run_data["heartrate"]) if run_data["heartrate"] else None
             )
         except:
-            print(f"Heart Rate: can not eval for {str(run_data["heartrate"])}")
+            print(f"Heart Rate: can not eval for {run_data['heartrate']}")
 
         heart_rate = None
         if heart_rate_list:
