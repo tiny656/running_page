@@ -124,7 +124,7 @@ def update_or_create_activity(session, run_activity):
                 location_country=location_country,
                 average_heartrate=run_activity.average_heartrate,
                 average_speed=float(run_activity.average_speed),
-                elevation_gain=run_activity.elevation_gain
+                elevation_gain=run_activity.elevation_gain,
                 summary_polyline=(
                     run_activity.map and run_activity.map.summary_polyline or ""
                 ),
