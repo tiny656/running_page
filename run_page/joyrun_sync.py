@@ -266,6 +266,7 @@ class Joyrun:
         :param run_points_data:        [[latitude, longitude],...]
         :param pause_list:             [[interval_index, pause_seconds],...]
         :param heart_rate_data_string: heart rate list in string format
+        :param altitude_data_string:   altitude list in string format
         :param interval:               time interval between each point, in seconds
         """
 
