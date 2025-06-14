@@ -178,7 +178,7 @@ const locationForRun = (
     );
     // default country is China
     if (l.length <= 2) {
-      country = "中国";
+      country = '中国';
     } else if (countryMatch) {
       [country] = countryMatch;
     }
