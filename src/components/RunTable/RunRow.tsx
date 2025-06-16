@@ -46,7 +46,7 @@ const RunRow = ({
     >
       <td>{run.name == 'run from joyrun' ? titleForRun(run) : run.name}</td>
       <td>{distance}</td>
-      {SHOW_ELEVATION_GAIN && <td>{elevation_gain}</td>}
+      {SHOW_ELEVATION_GAIN && <td>{(run.elevation_gain ?? 0.0).toFixed(1)}</td>}
       {paceParts && <td>{paceParts}</td>}
       <td>{heartRate && heartRate.toFixed(0)}</td>
       <td>{runTime}</td>
