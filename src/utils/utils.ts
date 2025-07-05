@@ -102,10 +102,10 @@ const scrollToMap = () => {
   }
 };
 
+const pattern = /([\u4e00-\u9fa5]{2,}(市|自治州|特别行政区|盟|地区))/g;
 const extractCities = (str: string): string[] => {
   const locations = [];
   let match;
-  const pattern = /([\u4e00-\u9fa5]{2,}(市|自治州|特别行政区|盟|地区))/g;
   while ((match = pattern.exec(str)) !== null) {
     locations.push(match[0]);
   }
@@ -172,15 +172,14 @@ const locationForRun = (
       // try to extract city coord from location_country info
       coordinate = extractCoordinate(location);
     }
-    const l = location.split(',');
-    // or to handle keep location format
+    const l = location.split(':');
     let countryMatch = l[l.length - 1].match(
       /[\u4e00-\u9fa5].*[\u4e00-\u9fa5]/
     );
-    if (!countryMatch && l.length >= 3) {
-      countryMatch = l[2].match(/[\u4e00-\u9fa5].*[\u4e00-\u9fa5]/);
-    }
-    if (countryMatch) {
+    // default country is China
+    if (l.length <= 2) {
+      country = '中国';
+    } else if (countryMatch) {
       [country] = countryMatch;
     }
   }

@@ -27,8 +27,8 @@ const MAP_LAYER_LIST = [
   'country-label',
 ];
 
-const USE_GOOGLE_ANALYTICS = false;
-const GOOGLE_ANALYTICS_TRACKING_ID = '';
+const USE_GOOGLE_ANALYTICS = true;
+const GOOGLE_ANALYTICS_TRACKING_ID = 'G-3ZZZ572298';
 
 // styling: set to `true` if you want dash-line route
 const USE_DASH_LINE = true;
@@ -45,7 +45,7 @@ const PRIVACY_MODE = false;
 //set to `false` if you want to make light off as default, only effect when `PRIVACY_MODE` = false
 const LIGHTS_ON = false;
 //set to `true` if you want to show the 'Elevation Gain' column
-const SHOW_ELEVATION_GAIN = false;
+const SHOW_ELEVATION_GAIN = true;
 // richer title for the activity types (like garmin style)
 const RICH_TITLE = false;
 
@@ -61,8 +61,8 @@ const ENGLISH_INFO_MESSAGE = (yearLength: number, year: string): string =>
 
 // not support English for now
 const CHINESE_LOCATION_INFO_MESSAGE_FIRST =
-  '我跑过了一些地方，希望随着时间推移，地图点亮的地方越来越多';
-const CHINESE_LOCATION_INFO_MESSAGE_SECOND = '不要停下来，不要停下奔跑的脚步';
+  '你的汗水是你成功的见证。继续前进，让地图上的每个角落都见证你的努力🏃‍♀️🏃‍♂️';
+const CHINESE_LOCATION_INFO_MESSAGE_SECOND = '持之以恒，不要让时间淡化你的决心';
 
 const INFO_MESSAGE = IS_CHINESE ? CHINESE_INFO_MESSAGE : ENGLISH_INFO_MESSAGE;
 const FULL_MARATHON_RUN_TITLE = IS_CHINESE ? '全程马拉松' : 'Full Marathon';
