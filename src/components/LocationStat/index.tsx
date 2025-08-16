@@ -31,7 +31,7 @@ const LocationStat = ({
         The future starts today, not tomorrow.
       </p>
     </section>
-    <hr color="red" />
+    <hr />
     <LocationSummary />
     <CitiesStat onClick={changeCity} />
     <PeriodStat onClick={changeTitle} />
