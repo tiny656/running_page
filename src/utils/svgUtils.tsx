@@ -14,8 +14,25 @@ export const loadSvgComponent = async (
   path: string
 ): Promise<SvgComponent> => {
   try {
-    const module = await stats[path]();
-    return { default: module as ComponentType<any> };
+    // 检查是否是远程 URL
+    if (path.startsWith('http://') || path.startsWith('https://')) {
+      // 处理远程 SVG
+      const response = await fetch(path);
+      const svgText = await response.text();
+
+      const RemoteSvgComponent: ComponentType<any> = (props) => (
+        <div
+          {...props}
+          dangerouslySetInnerHTML={{ __html: svgText }}
+        />
+      );
+
+      return { default: RemoteSvgComponent };
+    } else {
+      // 处理本地 SVG
+      const module = await stats[path]();
+      return { default: module as ComponentType<any> };
+    }
   } catch (error) {
     console.error(error);
     return { default: FailedLoadSvg };
