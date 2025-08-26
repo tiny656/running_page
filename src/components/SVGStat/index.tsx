@@ -8,17 +8,28 @@ const GithubSvg = lazy(() => loadSvgComponent(totalStat, './github.svg'));
 
 const GridSvg = lazy(() => loadSvgComponent(totalStat, './grid.svg'));
 
-const SVGStat = () => (
-  <div id="svgStat">
-    <Suspense fallback={<div className="text-center">Loading...</div>}>
-      <GithubSvg className="mt-4 h-auto w-full" />
-      <GridSvg className="mt-4 h-auto w-full" />
-      <img
-        className="mt-4 h-auto w-full"
-        src="https://raw.githubusercontent.com/tiny656/miles/master/miles.svg"
-      />
-    </Suspense>
-  </div>
-);
+const SVGStat = () => {
+  useEffect(() => {
+    // Initialize SVG color adjustments when component mounts
+    const timer = setTimeout(() => {
+      initSvgColorAdjustments();
+    }, 100); // Small delay to ensure SVG is rendered
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <div id="svgStat">
+      <Suspense fallback={<div className="text-center">Loading...</div>}>
+        <GithubSvg className="github-svg mt-4 h-auto w-full" />
+        <GridSvg className="grid-svg mt-4 h-auto w-full" />
+        <img
+          className="mt-4 h-auto w-full"
+          src="https://raw.githubusercontent.com/tiny656/miles/master/miles.svg"
+        />
+      </Suspense>
+    </div>
+  );
+};
 
 export default SVGStat;
