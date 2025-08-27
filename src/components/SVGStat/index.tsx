@@ -6,7 +6,12 @@ import { initSvgColorAdjustments } from '@/utils/colorUtils';
 // Lazy load both github.svg, grid.svg and miles.svg
 const GithubSvg = lazy(() => loadSvgComponent(totalStat, './github.svg'));
 const GridSvg = lazy(() => loadSvgComponent(totalStat, './grid.svg'));
-const MilesSvg = lazy(() => loadSvgComponent(totalStat, 'https://raw.githubusercontent.com/tiny656/miles/master/miles.svg'));
+const MilesSvg = lazy(() =>
+  loadSvgComponent(
+    totalStat,
+    'https://raw.githubusercontent.com/tiny656/miles/master/miles.svg'
+  )
+);
 
 const SVGStat = () => {
   useEffect(() => {

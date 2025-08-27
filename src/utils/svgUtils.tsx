@@ -11,10 +11,11 @@ const FailedLoadSvg = () => {
   return <div></div>;
 };
 
-const isRemoteUrl = (path: string): boolean =>
-  /^https?:\/\//.test(path);
+const isRemoteUrl = (path: string): boolean => /^https?:\/\//.test(path);
 
-const createSvgComponentFromText = (svgText: string): ComponentType<React.SVGProps<SVGSVGElement>> => {
+const createSvgComponentFromText = (
+  svgText: string
+): ComponentType<React.SVGProps<SVGSVGElement>> => {
   const parser = new DOMParser();
   const svgDoc = parser.parseFromString(svgText, 'image/svg+xml');
 
