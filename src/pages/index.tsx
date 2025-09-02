@@ -376,7 +376,7 @@ const Index = () => {
       </Helmet>
       <div className="w-full lg:w-1/4">
         <h1 className="my-12 mt-6 text-4xl font-extrabold italic">
-          <a href="/">{siteUrl}{siteTitle}</a>
+          <a href={siteUrl}>{siteTitle}</a>
         </h1>
         {(viewState.zoom ?? 0) <= 3 && IS_CHINESE ? (
           <LocationStat
