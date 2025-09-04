@@ -14,7 +14,8 @@ const FailedLoadSvg = () => {
 const isRemoteUrl = (path: string): boolean => /^https?:\/\//.test(path);
 
 const createSvgComponentFromText = (
-  svgText: string
+  svgText: string,
+  displayName = 'InlineSvgFromText'
 ): ComponentType<React.SVGProps<SVGSVGElement>> => {
   const parser = new DOMParser();
   const svgDoc = parser.parseFromString(svgText, 'image/svg+xml');
@@ -33,13 +34,16 @@ const createSvgComponentFromText = (
     {}
   );
 
-  return (props: React.SVGProps<SVGSVGElement>) => (
+  const SvgFromText: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg
       {...attributes}
       {...props}
       dangerouslySetInnerHTML={{ __html: svgElement.innerHTML }}
     />
   );
+
+  SvgFromText.displayName = displayName;
+  return SvgFromText;
 };
 
 export const loadSvgComponent = async (
@@ -55,7 +59,19 @@ export const loadSvgComponent = async (
       }
 
       const svgText = await response.text();
-      return { default: createSvgComponentFromText(svgText) };
+      let name = 'InlineSvgFromText';
+      try {
+        const url = new URL(path);
+        const fname = (url.pathname.split('/').pop() || '').replace(
+          /.[a-z]+$/i,
+          ''
+        );
+        if (fname) name = `Svg(${fname})`;
+      } catch {
+        // Use default name if URL parsing fails
+        // Error is intentionally ignored, will use default name
+      }
+      return { default: createSvgComponentFromText(svgText, name) };
     }
 
     const module = await stats[path]();
