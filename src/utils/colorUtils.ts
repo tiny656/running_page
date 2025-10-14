@@ -143,15 +143,20 @@ export const getCurrentTheme = (): 'light' | 'dark' => {
 /**
  * Updates SVG special colors dynamically based on current theme
  * This function modifies the SVG elements directly to use theme-appropriate colors
- * Supports both GitHub SVG and Grid SVG
+ * Supports both GitHub SVG, Grid SVG and Miles SVG
  */
 export const updateSvgSpecialColors = (): void => {
   if (typeof window === 'undefined') return;
 
-  // Find all GitHub and Grid SVG elements
+  // Find all GitHub, Grid SVG and Miles SVG elements
   const githubSvgs = document.querySelectorAll('.github-svg');
   const gridSvgs = document.querySelectorAll('.grid-svg');
-  const allSvgs = [...Array.from(githubSvgs), ...Array.from(gridSvgs)];
+  const milesSvgs = document.querySelectorAll('.miles-svg');
+  const allSvgs = [
+    ...Array.from(githubSvgs),
+    ...Array.from(gridSvgs),
+    ...Array.from(milesSvgs),
+  ];
 
   allSvgs.forEach((svg) => {
     // Find elements with special colors (typically fill="#FFFF00" or fill="#FF0000")

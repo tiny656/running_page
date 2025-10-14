@@ -146,6 +146,7 @@ hr {
 
 .github-svg text,
 .grid-svg text,
+.miles-svg text,
 .year-svg text {
   fill: var(--color-run-date);
 }

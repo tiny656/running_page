@@ -374,8 +374,8 @@ const Index = () => {
       <Helmet>
         <html lang="en" data-theme={theme} />
       </Helmet>
-      <div className="w-full lg:w-1/3">
-        <h1 className="my-12 mt-6 text-5xl font-extrabold italic">
+      <div className="w-full lg:w-1/4">
+        <h1 className="my-12 mt-6 text-4xl font-extrabold italic">
           <a href={siteUrl}>{siteTitle}</a>
         </h1>
         {(viewState.zoom ?? 0) <= 3 && IS_CHINESE ? (
@@ -388,7 +388,7 @@ const Index = () => {
           <YearsStat year={year} onClick={changeYear} />
         )}
       </div>
-      <div className="w-full lg:w-2/3" id="map-container">
+      <div className="w-full lg:w-3/4" id="map-container">
         <RunMap
           title={title}
           viewState={viewState}

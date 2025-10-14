@@ -43,7 +43,7 @@ const RunRow = ({
       key={run.start_date_local}
       onClick={handleClick}
     >
-      <td>{titleForRun(run)}</td>
+      <td>{run.name == 'run from joyrun' ? titleForRun(run) : run.name}</td>
       <td>{distance}</td>
       {SHOW_ELEVATION_GAIN && <td>{(run.elevation_gain ?? 0.0).toFixed(1)}</td>}
       {paceParts && <td>{paceParts}</td>}
