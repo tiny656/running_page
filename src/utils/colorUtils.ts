@@ -150,10 +150,12 @@ export const updateSvgSpecialColors = (): void => {
 
   // Find all GitHub, Grid SVG and Miles SVG elements
   const githubSvgs = document.querySelectorAll('.github-svg');
+  const githubYearSvgs = document.querySelectorAll('.github-year-svg');
   const gridSvgs = document.querySelectorAll('.grid-svg');
   const milesSvgs = document.querySelectorAll('.miles-svg');
   const allSvgs = [
     ...Array.from(githubSvgs),
+    ...Array.from(githubYearSvgs),
     ...Array.from(gridSvgs),
     ...Array.from(milesSvgs),
   ];
