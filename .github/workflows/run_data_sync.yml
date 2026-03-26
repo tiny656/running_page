@@ -187,6 +187,13 @@ jobs:
         # If you want to sync fit activity in gpx format, please consider the following script:
         # python run_page/oppo_sync.py ${{ secrets.OPPO_ID }} ${{ secrets.OPPO_CLIENT_SECRET }} ${{ secrets.OPPO_CLIENT_REFRESH_TOKEN }} --with-gpx
 
+      - name: Run sync Intervals.icu script
+        if: env.RUN_TYPE == 'intervals_icu'
+        run: |
+          python run_page/intervals_icu_sync.py ${{ secrets.INTERVALS_ICU_ATHLETE_ID }} ${{ secrets.INTERVALS_ICU_API_KEY }}
+        # Default syncs running activities only. To sync all types add --all
+        # To change start date: --start-date 2020-01-01 (default: 2015-01-01)
+
       - name: Run db updater script to add 'Elevation Gain' field to db
         if: env.RUN_TYPE == 'db_updater'
         run: |
