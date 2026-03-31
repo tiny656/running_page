@@ -974,6 +974,12 @@ To specify a custom start date:
 python run_page/intervals_icu_sync.py ${athlete_id} ${api_key} --start-date 2024-01-01
 ```
 
+If your data comes from a Huawei/China device using the GCJ-02 coordinate system, add `--gcj02` to fix the coordinate offset (converts GCJ-02 to WGS-84 in downloaded FIT/GPX/TCX files):
+
+```bash
+python run_page/intervals_icu_sync.py ${athlete_id} ${api_key} --gcj02
+```
+
 #### GitHub Actions
 
 1. Change `RUN_TYPE` to `intervals_icu` in the `run_data_sync.yml` file
