@@ -211,7 +211,7 @@ jobs:
       - name: Run sync Intervals.icu script
         if: env.RUN_TYPE == 'intervals_icu'
         run: |
-          python run_page/intervals_icu_sync.py ${{ secrets.INTERVALS_ICU_ATHLETE_ID }} ${{ secrets.INTERVALS_ICU_API_KEY }} --start-date 2026-03-27
+          python run_page/intervals_icu_sync.py ${{ secrets.INTERVALS_ICU_ATHLETE_ID }} ${{ secrets.INTERVALS_ICU_API_KEY }} --start-date 2026-03-27 --gcj02
         # Default syncs running activities only. To sync all types add --all
         # To change start date: --start-date 2020-01-01 (default: 2015-01-01)
 
