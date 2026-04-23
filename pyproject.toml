@@ -16,8 +16,7 @@ dependencies = [
   "polyline",
   "sqlalchemy",
   "textual",
-  "tzfpy; platform_system != \"Windows\"",
-  "timezonefinder; platform_system == \"Windows\"",
+  "tzfpy",
   "pyyaml",
   "aiofiles",
   "cloudscraper",
@@ -55,3 +54,7 @@ build-backend = "pdm.backend"
 [tool.pdm]
 distribution = true
 packages = ["run_page"]
+
+[tool.pdm.build]
+package-dir = "."
+includes = ["run_page"]
