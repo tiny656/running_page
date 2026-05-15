@@ -226,7 +226,7 @@ export const INDOOR_COLOR = '#8899aa';
 
 // map tiles vendor, maptiler or mapbox or stadiamaps
 // if you want to use maptiler, set the access token in MAP_TILE_ACCESS_TOKEN
-export const MAP_TILE_VENDOR = 'mapcn';
+export const MAP_TILE_VENDOR = 'mapbox';
 
 // map tiles style name, see MAP_TILE_STYLES for more details
 export const MAP_TILE_STYLE_LIGHT = 'osm-bright';
@@ -236,7 +236,7 @@ export const MAP_TILE_STYLE_DARK = 'dark-matter';
 // maptiler: Gt5R0jT8tuIYxW6sNrAg | sign up at https://cloud.maptiler.com/auth/widget
 // stadiamaps: 8a769c5a-9125-4936-bdcf-a6b90cb5d0a4 | sign up at https://client.stadiamaps.com/signup/
 // mapcn: empty
-export const MAP_TILE_ACCESS_TOKEN = '';
+export const MAP_TILE_ACCESS_TOKEN = 'pk.eyJ1IjoidGlueTY1NiIsImEiOiJjbWYyaTJkcDcwNmZ0MnFzNW5naHZsc25oIn0.DKnvTe_n7w_jGVyAP_riNA';
 
 export const MAP_TILE_STYLES = {
   mapcn: {
