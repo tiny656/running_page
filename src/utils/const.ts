@@ -226,7 +226,7 @@ export const INDOOR_COLOR = '#8899aa';
 
 // map tiles vendor, maptiler or mapbox or stadiamaps
 // if you want to use maptiler, set the access token in MAP_TILE_ACCESS_TOKEN
-export const MAP_TILE_VENDOR = 'mapbox';
+export const MAP_TILE_VENDOR = 'mapboxcn';
 
 // map tiles style name, see MAP_TILE_STYLES for more details
 export const MAP_TILE_STYLE_LIGHT = 'osm-bright';
