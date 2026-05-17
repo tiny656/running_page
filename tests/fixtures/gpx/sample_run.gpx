@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="running_page-smoke-test" xmlns="http://www.topografix.com/GPX/1/1">
+  <trk>
+    <name>smoke-test run</name>
+    <type>running</type>
+    <trkseg>
+      <trkpt lat="31.2304" lon="121.4737">
+        <ele>10.0</ele>
+        <time>2024-01-01T08:00:00Z</time>
+      </trkpt>
+      <trkpt lat="31.231" lon="121.4743">
+        <ele>10.0</ele>
+        <time>2024-01-01T08:00:05Z</time>
+      </trkpt>
+      <trkpt lat="31.2316" lon="121.4749">
+        <ele>10.0</ele>
+        <time>2024-01-01T08:00:10Z</time>
+      </trkpt>
+      <trkpt lat="31.2322" lon="121.4755">
+        <ele>10.0</ele>
+        <time>2024-01-01T08:00:15Z</time>
+      </trkpt>
+      <trkpt lat="31.2328" lon="121.4761">
+        <ele>10.0</ele>
+        <time>2024-01-01T08:00:20Z</time>
+      </trkpt>
+      <trkpt lat="31.2334" lon="121.4767">
+        <ele>10.0</ele>
+        <time>2024-01-01T08:00:25Z</time>
+      </trkpt>
+      <trkpt lat="31.234" lon="121.4773">
+        <ele>10.0</ele>
+        <time>2024-01-01T08:00:30Z</time>
+      </trkpt>
+      <trkpt lat="31.2346" lon="121.4779">
+        <ele>10.0</ele>
+        <time>2024-01-01T08:00:35Z</time>
+      </trkpt>
+      <trkpt lat="31.2352" lon="121.4785">
+        <ele>10.0</ele>
+        <time>2024-01-01T08:00:40Z</time>
+      </trkpt>
+      <trkpt lat="31.2358" lon="121.4791">
+        <ele>10.0</ele>
+        <time>2024-01-01T08:00:45Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

@@ -1,6 +1,20 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - 'LICENSE*'
+      - '.gitignore'
+      - '.gitattributes'
+  pull_request:
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - 'LICENSE*'
+      - '.gitignore'
+      - '.gitattributes'
 
 jobs:
   python_lint_and_test:
@@ -27,10 +41,8 @@ jobs:
         run: |
           pip install -r requirements-dev.txt
 
-      - name: Run GPX sync test
-        run: |
-          # make sure the gpx_sync.py script is executable
-          python run_page/gpx_sync.py
+      - name: Run sync smoke tests
+        run: python tests/smoke_sync.py
 
       - name: Check formatting (black)
         run: black . --diff --color && black . --check
