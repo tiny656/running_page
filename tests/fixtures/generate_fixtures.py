@@ -35,7 +35,7 @@ POINTS = [
     (31.2352, 121.4785),
     (31.2358, 121.4791),
 ]
-START_UTC = datetime.datetime(2024, 1, 1, 8, 0, 0, tzinfo=datetime.timezone.utc)
+START_UTC = datetime.datetime(2024, 1, 1, 8, 0, 0, tzinfo=datetime.UTC)
 STEP_S = 5
 TOTAL_DISTANCE_M = 800.0
 ELEVATION_M = 10.0
@@ -85,8 +85,10 @@ def write_fit(out_path: str) -> None:
 def write_gpx(out_path: str) -> None:
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
-        '<gpx version="1.1" creator="running_page-smoke-test" '
-        'xmlns="http://www.topografix.com/GPX/1/1">',
+        (
+            '<gpx version="1.1" creator="running_page-smoke-test" '
+            'xmlns="http://www.topografix.com/GPX/1/1">'
+        ),
         "  <trk>",
         "    <name>smoke-test run</name>",
         "    <type>running</type>",

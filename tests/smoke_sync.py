@@ -69,6 +69,7 @@ def run_case(label, sync_script, folder_env_key, fixture_subdir):
             cwd=REPO_ROOT,
             capture_output=True,
             text=True,
+            check=False,
         )
         if proc.returncode != 0:
             print(proc.stdout)
