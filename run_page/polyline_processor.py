@@ -75,7 +75,7 @@ def start_end_hiding(polyline: list[tuple[float]], distance: int) -> list[tuple[
     if distance <= 0:
         return polyline
 
-    start_index, end_index = 0, len(polyline) - 1
+    start_index, end_index = len(polyline), -1
 
     starting_distance = 0
     for i in range(1, len(polyline)):
