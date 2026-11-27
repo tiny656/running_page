@@ -75,14 +75,14 @@ jobs:
         run: echo "RUN_TYPE=health_auto_export" >> "$GITHUB_ENV"
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
           persist-credentials: ${{ !inputs.hae_drive_preview }}
 
       - name: Set up Python
         id: setup_python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.12'
           cache: pip
@@ -113,7 +113,7 @@ jobs:
 
       - name: Cache Data Files
         if: env.SAVE_DATA_IN_GITHUB_CACHE == 'true' && !inputs.hae_drive_preview
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with: &sync-data-cache
           path: |
             activities
@@ -132,7 +132,7 @@ jobs:
 
       - name: Restore data for Drive preview
         if: env.SAVE_DATA_IN_GITHUB_CACHE == 'true' && inputs.hae_drive_preview
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v6
         with: *sync-data-cache
 
       - name: Run sync Nike script
